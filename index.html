@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blossom — Cute To-Do List</title>
+  <meta name="description" content="A cute, elegant pastel to-do list with tasks synced through a Python API and MySQL." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="blob blob-pink" aria-hidden="true"></div>
+  <div class="blob blob-mint" aria-hidden="true"></div>
+  <div class="blob blob-sky" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <main class="app">
+    <header class="hero">
+      <div class="logo-badge">🌸</div>
+      <h1>Blossom</h1>
+      <p class="tagline" id="tagline">Your cute little to-do garden</p>
+    </header>
+    <section class="glass-card progress-card">
+      <div class="progress-top">
+        <div>
+          <span class="progress-label">Today's bloom</span>
+          <strong id="progress-text">0 of 0 done</strong>
+        </div>
+        <span class="progress-pct" id="progress-pct">0%</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <p class="encourage" id="encourage">Plant your first task 🌱</p>
+    </section>
+    <form id="add-form" class="glass-card add-form" autocomplete="off">
+      <input type="text" id="task-input" placeholder="Add something sweet…"
+             maxlength="120" aria-label="New task" />
+      <button type="submit" class="add-btn" aria-label="Add task">Add 💖</button>
+    </form>
+    <div class="toolbar">
+      <span class="task-count" id="task-count">0 tasks</span>
+      <div class="toolbar-actions">
+        <button id="toggle-completed" class="chip-btn" type="button">Hide completed</button>
+        <button id="clear-completed" class="chip-btn danger" type="button">Clear done</button>
+        <button id="reset-all" class="chip-btn danger" type="button">Reset</button>
+      </div>
+    </div>
+    <ul id="task-list" class="task-list" aria-live="polite"></ul>
+    <div id="empty-state" class="glass-card empty-state" hidden>
+      <span class="empty-emoji">🌷</span>
+      <p>No tasks yet! Add something sweet 💖</p>
+    </div>
+    <footer class="foot">
+      <p>Made with 💗 — your tasks bloom across your connected database</p>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
